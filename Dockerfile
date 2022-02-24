@@ -1,8 +1,6 @@
 FROM minio/mc:latest
 LABEL maintainer="toughIQ@gmail.com"
 
-RUN apk add --no-cache bash
-
 COPY setupS3.sh /.
 COPY sync.sh /.
 RUN chmod +x setupS3.sh sync.sh
