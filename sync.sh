@@ -25,10 +25,10 @@ if [ "$S3_SYNC" == "up" ]; then
 #    echo "mc $DEBUG mb s3/$S3_BUCKET"
 #    mc $DEBUG mb s3/$S3_BUCKET
     echo "mc $DEBUG $QUIET mirror $WATCH $FORCE $REMOVE /backup s3/$S3_BUCKET"
-    mc $DEBUG $QUIET mirror $WATCH $FORCE $REMOVE /backup s3/$S3_BUCKET
+    mc $DEBUG $QUIET --config-dir $CONFIG_DIR mirror $WATCH $FORCE $REMOVE /backup s3/$S3_BUCKET
 elif [ "$S3_SYNC" == "down" ]; then
     echo "mc $DEBUG $QUIET mirror $WATCH $FORCE $REMOVE s3/$S3_BUCKET /restore"
-    mc $DEBUG $QUIET mirror $WATCH $FORCE $REMOVE s3/$S3_BUCKET /restore
+    mc $DEBUG $QUIET mirror --config-dir $CONFIG_DIR $WATCH $FORCE $REMOVE s3/$S3_BUCKET /restore
 else
     echo "Please set S3_SYNC to \"up\" or \"down\"."
 fi

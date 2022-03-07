@@ -23,3 +23,6 @@ ENV S3_URL="" \
     S3_WATCH=0 \
     S3_FORCE=0 \
     S3_REMOVE=0 \
+    CONFIG_DIR="/tmp" 
+    
+WORKDIR /tmp
